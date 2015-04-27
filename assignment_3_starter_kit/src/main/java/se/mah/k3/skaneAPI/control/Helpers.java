@@ -9,11 +9,7 @@ import java.util.TimeZone;
 
 public class Helpers{
 	
-	/**
-	 *Extracts hour and minutes from a dateDimestring
-	 * @param String in format 2012-10-15T08:17:00
-	 * @return String in format HH:MM
-	 * */
+
     public static String formatTime(String dateTimeString){
     	String formattedTime= "";
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
@@ -62,11 +58,7 @@ public class Helpers{
     	return day +"/"+month;
     }
     
-    /**
-	 *Converts dates between formats
-	 * @param in format 2012-10-15T08:17:00
-	 * @return String in format YYYY-MM-DD
-	 * */
+
     public static String getDate(String dateTimeString){
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     	Date date =null;
@@ -109,11 +101,7 @@ public class Helpers{
     	return String.valueOf(diffMinutes);
     }
     
-    /**
-  	 *Calculates minutes from now to a specific time in the future
-  	 * @param String startTime in format 2012-10-15T08:17:00
-  	 * @return minutes to departure
-  	 * */
+
     public static String timeToDeparture(String startTime){
     	int diffMinutes=-1;
     	Calendar now = Calendar.getInstance();
@@ -165,11 +153,7 @@ public class Helpers{
     	return now;
     }
     
-    /**
-  	 * Is a dateTime today
-  	 * @param dateTimeString in format 2012-10-15T08:17:00
-  	 * @return true if today
-  	 * */
+
     public static boolean isToday(String depDateTime) {
     	boolean isToday = false;
 		Calendar depDate = parseCalendarString(depDateTime);
@@ -183,9 +167,7 @@ public class Helpers{
 	}
 
     /**
-  	 * Is a dateTime tomorrow
-  	 * @param dateTimeString in format 2012-10-15T08:17:00
-  	 * @return true if tomorrow
+
   	 * */
 	public static boolean isTomorrow(String depDateTime) {
 		boolean isTomorrow = false;
@@ -200,9 +182,7 @@ public class Helpers{
 	}
 	
 	 /**
-  	 * Is a dateTime after tomorrow
-  	 * @param dateTimeString in format 2012-10-15T08:17:00
-  	 * @return true if not today or tomorrow
+
   	 * */
 	public static String isAfterTomorrow(String dateTime) {		
 		Calendar depDate = parseCalendarString(dateTime);

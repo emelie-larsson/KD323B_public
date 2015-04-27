@@ -28,4 +28,9 @@ public class Journeys {
 	public void clearJourneys() {
 		this.journeys.clear();
 	}
+
+    public static int size() {
+
+        return 1;
+    }
 }
