@@ -75,7 +75,7 @@ public class Adapter extends BaseExpandableListAdapter {
             startTime.setText(timeToDeparture);
 
             ImageView error = (ImageView) convertView.findViewById(R.id.error);
-            if (Integer.parseInt(MyJourney.getTimeToDeparture()) < 5) {      /* ERROR */
+            if (Integer.parseInt(MyJourney.get(groupPosition).getTimeToDeparture()) < 5) {
                 Log.i("tiden", "fungerar");
                 error.setVisibility(View.VISIBLE);
             }else{
@@ -89,6 +89,8 @@ public class Adapter extends BaseExpandableListAdapter {
             return convertView;
 
             }
+
+
     @Override
         public Object getGroup(int groupPosition) {
             return null;
