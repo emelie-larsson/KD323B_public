@@ -41,6 +41,9 @@ public class Adapter extends BaseExpandableListAdapter {
             LayoutInflater li = (LayoutInflater) this.c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = li.inflate(R.layout.group_layout,null);
 
+
+
+
             TextView Avgang = (TextView) convertView.findViewById(R.id.Avgang);
             String startStation = MyJourney.get(groupPosition).getStartStation().getStationName();
             Avgang.setText(startStation);
@@ -64,16 +67,13 @@ public class Adapter extends BaseExpandableListAdapter {
             String Arrival = MyJourney.get(groupPosition).getEndStation().getStationName();
             arrival.setText(Arrival);
 
+
+
+
             TextView startTime = (TextView) convertView.findViewById(R.id.timeToDeparture);
             String timeToDeparture = MyJourney.get(groupPosition).getTimeToDeparture()+" min";
             startTime.setText(timeToDeparture);
 
-            TextView travelMinutes = (TextView) convertView.findViewById(R.id.travelMinutes);
-            String Minutes = MyJourney.get(groupPosition).getTravelMinutes()+ " min restid";
-            travelMinutes.setText(Minutes);
-            return convertView;
-
-            String departure = MyJourney.getTimeToDeparture();       /*   ERROR på gettimetodeparture*/
             ImageView error = (ImageView) convertView.findViewById(R.id.error);
             if (Integer.parseInt(MyJourney.getTimeToDeparture()) < 5) {      /* ERROR */
                 Log.i("tiden", "fungerar");
@@ -83,12 +83,12 @@ public class Adapter extends BaseExpandableListAdapter {
 
             }
 
-
-
+            TextView travelMinutes = (TextView) convertView.findViewById(R.id.travelMinutes);
+            String Minutes = MyJourney.get(groupPosition).getTravelMinutes()+ " min restid";
+            travelMinutes.setText(Minutes);
             return convertView;
-        }
 
-
+            }
     @Override
         public Object getGroup(int groupPosition) {
             return null;
